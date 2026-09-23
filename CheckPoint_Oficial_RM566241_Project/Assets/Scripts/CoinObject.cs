@@ -2,16 +2,14 @@ using UnityEngine;
 
 public class CoinObject : MonoBehaviour
 {
-    public int speed = 20;
+    [Tooltip("Velocidade do giro visual da moeda, em graus por segundo")]
+    public float rotationSpeed = 90f;
 
-    void Start()
-    {
-        
-    }
 
 
     void Update()
     {
-        transform.Rotate(360 * speed, 360 * speed, 0);
+
+        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
     }
 }
